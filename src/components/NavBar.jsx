@@ -5,14 +5,14 @@ const NavBar = () => {
   const [loggedIn, setloggedIn] = useState(false);
   const navigate = useNavigate();
 
+  const some = localStorage.getItem("token");
   useEffect(() => {
-    const some = localStorage.getItem("token");
     console.log(some);
     if (some) {
       setloggedIn(true);
     }
     console.log(some);
-  }, [loggedIn]);
+  }, [some, loggedIn]);
 
   const logout = () => {
     localStorage.removeItem("token");
